@@ -1,4 +1,3 @@
-
 {
   "@context": "https://schema.org",
   "@graph": [
@@ -33,7 +32,19 @@
         "postalCode": "12510",
         "addressCountry": "ID"
       },
-      "hasMap": "https://maps.app.goo.gl/8H2wLhxVJ27hjkXE6",
+      "location": {
+        "@type": "Place",
+        "name": "Kantor PT. Ajmal Noor Wisata",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Ruko Wisma Griya Intan Jl. Hj. Tutty Alawiyah No.21 B, RT.1/RW.7, Pejaten Barat, Pasar Minggu",
+          "addressLocality": "Kota Jakarta Selatan",
+          "addressRegion": "DKI Jakarta",
+          "postalCode": "12510",
+          "addressCountry": "ID"
+        },
+        "hasMap": "https://maps.app.goo.gl/8H2wLhxVJ27hjkXE6"
+      },
       "foundingDate": "2010",
       "founder": {
         "@type": "Person",
