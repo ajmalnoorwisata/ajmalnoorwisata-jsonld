@@ -1,0 +1,114 @@
+
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ajmalnoorwisata.co.id/#organization",
+      "name": "PT. Ajmal Noor Wisata",
+      "url": "https://www.ajmalnoorwisata.co.id/",
+      "logo": "https://www.ajmalnoorwisata.co.id/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/ajmalnoorwisata/",
+        "https://www.instagram.com/ajmalnoorwisata/",
+        "https://x.com/ajmalnoorwisata",
+        "https://www.linkedin.com/in/ajmalnoorwisata/",
+        "https://id.pinterest.com/ajmalnoorwisata/",
+        "https://www.youtube.com/@ajmalnoorwisata",
+        "https://ajmal-noor-wisata.tumblr.com/",
+        "https://www.tiktok.com/@ajmalnoorwisata"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+6282210335285",
+        "contactType": "customer service",
+        "areaServed": "ID",
+        "availableLanguage": ["Indonesian", "English"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ruko Wisma Griya Intan Jl. Hj. Tutty Alawiyah No.21 B, RT.1/RW.7, Pejaten Barat, Pasar Minggu",
+        "addressLocality": "Kota Jakarta Selatan",
+        "addressRegion": "DKI Jakarta",
+        "postalCode": "12510",
+        "addressCountry": "ID"
+      },
+      "hasMap": "https://maps.app.goo.gl/8H2wLhxVJ27hjkXE6",
+      "foundingDate": "2010",
+      "founder": {
+        "@type": "Person",
+        "name": "Ajmal Noor Wista"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.ajmalnoorwisata.co.id/#website",
+      "url": "https://www.ajmalnoorwisata.co.id/",
+      "name": "Ajmal Noor Wisata",
+      "description": "Travel Umroh dan Haji Plus terpercaya dari Jakarta Selatan. Menyediakan paket Umroh 9, 12, 16 hari dan private Umroh 2025-2026.",
+      "publisher": { "@id": "https://www.ajmalnoorwisata.co.id/#organization" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.ajmalnoorwisata.co.id/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Product",
+      "@id": "https://www.ajmalnoorwisata.co.id/#umroh2025",
+      "name": "Paket Umroh 9–16 Hari 2025",
+      "sku": "UMROH-2025-16H",
+      "category": "TravelPackage",
+      "description": "Program Umroh 9–16 hari bersama PT. Ajmal Noor Wisata, keberangkatan Oktober–Desember 2025 dari Jakarta Selatan.",
+      "brand": { "@id": "https://www.ajmalnoorwisata.co.id/#organization" },
+      "image": "https://www.ajmalnoorwisata.co.id/images/umroh-16-hari.jpg",
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "24000000",
+        "highPrice": "36900000",
+        "priceCurrency": "IDR",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2025-01-01",
+        "seller": { "@id": "https://www.ajmalnoorwisata.co.id/#organization" }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ajmalnoorwisata.co.id/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa saja fasilitas yang termasuk dalam paket Umroh?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fasilitas meliputi tiket pesawat PP, visa Umroh, hotel, makan 3x sehari, transportasi, muthawif, handling bandara, perlengkapan Umroh, dan manasik."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa harga paket Umroh 2025?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Harga mulai Rp 33.000.000 hingga Rp 36.900.000, tergantung durasi program (9–16 hari) dan jadwal keberangkatan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana cara mendaftar paket Umroh?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kirim dokumen via WhatsApp ke +6282210335285, lakukan DP minimal Rp 15.000.000, dan pelunasan maksimal 3 minggu sebelum keberangkatan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Di mana lokasi kantor Ajmal Noor Wisata?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kantor kami beralamat di Ruko Wisma Griya Intan Jl. Hj. Tutty Alawiyah No.21 B, Pejaten Barat, Pasar Minggu, Jakarta Selatan. Lihat di Google Maps: https://maps.app.goo.gl/8H2wLhxVJ27hjkXE6"
+          }
+        }
+      ]
+    }
+  ]
+}
