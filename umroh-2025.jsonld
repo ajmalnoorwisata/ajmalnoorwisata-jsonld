@@ -1,28 +1,17 @@
+<b:if cond='data:view.isHomepage or data:view.isPage or data:view.isPost'>
+<script type='application/ld+json'>
 {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": ["Organization", "TravelAgency"],
-      "@id": "https://www.ajmalnoorwisata.co.id/#organization",
       "name": "PT. Ajmal Noor Wisata",
       "url": "https://www.ajmalnoorwisata.co.id/",
       "logo": "https://www.ajmalnoorwisata.co.id/logo.png",
       "image": "https://www.ajmalnoorwisata.co.id/logo.png",
-      "description": "PT. Ajmal Noor Wisata adalah biro perjalanan resmi Haji dan Umroh terpercaya dari Jakarta Selatan. Menyediakan paket Umroh 9, 12, 16 hari, serta Haji Plus dan Private Umroh 2025–2026.",
-      "foundingDate": "2010",
-      "founder": {
-        "@type": "Person",
-        "name": "Ajmal Noor"
-      },
+      "description": "PT. Ajmal Noor Wisata adalah biro perjalanan resmi Haji &amp; Umroh terpercaya dari Jakarta Selatan. Menyediakan paket Umroh reguler, VIP, dan Haji Plus 2025–2026 dengan pelayanan amanah &amp; profesional.",
       "telephone": "+6282210335285",
-      "email": "info@ajmalnoorwisata.co.id",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+6282210335285",
-        "contactType": "customer service",
-        "areaServed": "ID",
-        "availableLanguage": ["Indonesian", "English"]
-      },
+      "priceRange": "Rp 25000000 - Rp 50000000",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Ruko Wisma Griya Intan Jl. Hj. Tutty Alawiyah No.21 B, RT.1/RW.7, Pejaten Barat, Ps. Minggu",
@@ -31,7 +20,7 @@
         "postalCode": "12510",
         "addressCountry": "ID"
       },
-      "hasMap": "https://maps.app.goo.gl/8H2wLhxVJ27hjkXE6",
+      "openingHours": "Mo-Fr 09:00-16:00",
       "sameAs": [
         "https://www.facebook.com/ajmalnoorwisata/",
         "https://www.instagram.com/ajmalnoorwisata/",
@@ -42,47 +31,86 @@
         "https://ajmal-noor-wisata.tumblr.com/",
         "https://www.tiktok.com/@ajmalnoorwisata"
       ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://www.ajmalnoorwisata.co.id/#website",
-      "url": "https://www.ajmalnoorwisata.co.id/",
-      "name": "Ajmal Noor Wisata | Travel Haji & Umroh",
-      "inLanguage": "id",
-      "publisher": { "@id": "https://www.ajmalnoorwisata.co.id/#organization" },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://www.ajmalnoorwisata.co.id/?s={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    },
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://www.ajmalnoorwisata.co.id/#localbusiness",
-      "name": "PT. Ajmal Noor Wisata",
-      "image": "https://www.ajmalnoorwisata.co.id/logo.png",
-      "priceRange": "Rp 24.000.000 – Rp 36.900.000",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Ruko Wisma Griya Intan Jl. Hj. Tutty Alawiyah No.21 B, RT.1/RW.7, Pejaten Barat, Ps. Minggu",
-        "addressLocality": "Kota Jakarta Selatan",
-        "addressRegion": "DKI Jakarta",
-        "postalCode": "12510",
-        "addressCountry": "ID"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -6.282,
-        "longitude": 106.825
-      },
-      "openingHours": "Mo-Fr 09:00-16:00",
-      "telephone": "+6282210335285",
-      "url": "https://www.ajmalnoorwisata.co.id/",
-      "sameAs": [
-        "https://www.instagram.com/ajmalnoorwisata/",
-        "https://www.facebook.com/ajmalnoorwisata/",
-        "https://www.tiktok.com/@ajmalnoorwisata"
-      ]
     }
   ]
 }
+</script>
+</b:if>
+
+<b:if cond='data:view.isPost'>
+<script type='application/ld+json' id='umrohSchema'>
+{
+  "@context": "https://schema.org",
+  "@type": ["Product", "TouristTrip"],
+  "name": "<data:post.title.escaped/> - PT. Ajmal Noor Wisata",
+  "description": "<data:post.snippet.escaped/>",
+  "image": "<data:post.featuredImage.url.escaped/>",
+  "sku": "TRAVEL-<data:post.id/>",
+  "brand": {
+    "@type": "Brand",
+    "name": "PT. Ajmal Noor Wisata"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "150"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "IDR",
+    "availability": "https://schema.org/InStock",
+    "validFrom": "2025-01-01",
+    "url": "<data:post.url.escaped/>"
+  },
+  "provider": {
+    "@type": "TravelAgency",
+    "name": "PT. Ajmal Noor Wisata",
+    "telephone": "+6282210335285"
+  }
+}
+</script>
+
+<script>
+// =============================
+// AUTO-DETEKSI HARGA & TANGGAL
+// =============================
+(function() {
+  try {
+    var text = document.body.innerText;
+
+    // Cari harga pertama (contoh: Rp 33.000.000)
+    var hargaMatch = text.match(/Rp\\s?([\\d\\.]+)/i);
+    var cleanPrice = hargaMatch ? hargaMatch[1].replace(/\\./g, "") : "0";
+
+    // Deteksi tanggal keberangkatan (contoh: 12 Februari 2026)
+    var bulanList = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+    var tanggalMatch = text.match(new RegExp("(\\d{1,2}\\s)?(" + bulanList.join("|") + ")\\s?20\\d{2}", "i"));
+    var validFrom = "2025-01-01";
+
+    if (tanggalMatch) {
+      var tgl = tanggalMatch[1] ? tanggalMatch[1].trim() : "01";
+      var blnNama = tanggalMatch[2];
+      var thn = tanggalMatch[0].match(/20\\d{2}/)[0];
+      var blnIndex = bulanList.findIndex(b => b.toLowerCase() === blnNama.toLowerCase()) + 1;
+      if (blnIndex < 10) blnIndex = "0" + blnIndex;
+      if (tgl.length === 1) tgl = "0" + tgl;
+      validFrom = thn + "-" + blnIndex + "-" + tgl;
+    }
+
+    // Update schema JSON-LD
+    var schemaTag = document.getElementById('umrohSchema');
+    if (schemaTag) {
+      var schema = JSON.parse(schemaTag.textContent);
+      if (schema.offers) {
+        schema.offers.price = cleanPrice;
+        schema.offers.validFrom = validFrom;
+      }
+      schemaTag.textContent = JSON.stringify(schema, null, 2);
+    }
+  } catch (e) {
+    console.error("Schema auto-update error:", e);
+  }
+})();
+</script>
+</b:if>
